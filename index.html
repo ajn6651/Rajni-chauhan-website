@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajnikant C. Chauhan | Digital Textile Designer &amp; Fine Artist</title>
+<meta name="description" content="Rajnikant C. Chauhan is a digital textile designer in Surat, India, with fifteen years as a free-hand sketch artist and a decade of painting, sculpture and exhibitions from India to the M. P. Birla Art Gallery, London.">
+<meta name="theme-color" content="#131C2E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rajnikant C. Chauhan | Digital Textile Designer &amp; Fine Artist">
+<meta property="og:description" content="Fifteen years of free-hand textile sketching, ten years of painting &amp; sculpture, and a decade of digital textile design, from Surat to London.">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" as="image" href="assets/hero.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  /* ============ TOKENS ============ */
+  :root{
+    --ivory:      #F2ECDE;
+    --ivory-2:    #E9DFC8;
+    --ink:        #1C1814;
+    --ink-soft:   rgba(28,24,20,.66);
+    --indigo:     #223353;
+    --indigo-2:   #2E4670;
+    --indigo-deep:#131C2E;
+    --gold:       #B08A42;
+    --gold-soft:  #C9A567;
+    --rust:       #9C4A34;
+    --line:       rgba(28,24,20,.14);
+    --line-light: rgba(242,236,222,.22);
+    --shadow-lg:  0 40px 80px -30px rgba(19,28,46,.45);
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+  body{
+    margin:0;
+    overflow-x:hidden;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1240px; margin:0 auto; padding:0 48px; }
+
+  h1,h2,h3{ margin:0; font-family:'Fraunces', serif; font-weight:500; letter-spacing:-.01em; }
+
+  .display-xl{ font-size:clamp(46px,8.2vw,112px); line-height:.98; font-variation-settings:'opsz' 144; font-weight:400; }
+  .display-lg{ font-size:clamp(32px,4.4vw,56px); line-height:1.05; font-variation-settings:'opsz' 120; }
+  .display-md{ font-size:clamp(25px,2.7vw,35px); line-height:1.15; font-variation-settings:'opsz' 90; }
+  .quote{ font-family:'Fraunces', serif; font-style:italic; font-weight:400; font-variation-settings:'opsz' 40; }
+
+  .eyebrow-row{ display:flex; align-items:center; gap:14px; margin-bottom:22px; }
+  .rule-short{ width:34px; height:1px; background:var(--ink); opacity:.4; }
+  .rule-short.on-dark{ background:var(--ivory); }
+
+  .tag{
+    position:relative; display:inline-flex; align-items:center;
+    height:26px; padding:0 14px 0 24px;
+    border:1px dashed var(--indigo);
+    color:var(--indigo);
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; font-weight:500;
+    letter-spacing:.16em; text-transform:uppercase;
+    background:transparent;
+    white-space:nowrap;
+  }
+  .tag::before{
+    content:''; position:absolute; left:9px; top:50%; transform:translateY(-50%);
+    width:5px; height:5px; border-radius:50%;
+    background:var(--ivory); border:1px solid var(--indigo);
+  }
+  .tag--on-dark{ border-color:var(--gold-soft); color:var(--gold-soft); }
+  .tag--on-dark::before{ background:var(--indigo-deep); border-color:var(--gold-soft); }
+  .tag--on-card{ background:var(--ivory); }
+
+  .btn-line{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    padding-bottom:6px; border-bottom:1px solid currentColor;
+    transition:gap .35s var(--ease), opacity .35s var(--ease);
+  }
+  .btn-line:hover{ gap:16px; opacity:.7; }
+
+  /* ============ REVEAL ANIMATION ============ */
+  .reveal{ opacity:1; transform:none; transition:opacity .9s var(--ease), transform .9s var(--ease); }
+  .reveal.is-visible{ opacity:1; transform:none; }
+  .reveal-delay-1.is-visible{ transition-delay:.1s; }
+  .reveal-delay-2.is-visible{ transition-delay:.2s; }
+  .reveal-delay-3.is-visible{ transition-delay:.3s; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:26px 48px;
+    display:flex; align-items:center; justify-content:space-between;
+    color:var(--ivory);
+    transition:background .5s var(--ease), color .5s var(--ease), padding .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  header.nav.scrolled{
+    background:rgba(242,236,222,.92);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    color:var(--ink); padding:16px 48px;
+    border-bottom:1px solid var(--line);
+  }
+  /* over dark sections the scrolled nav becomes a deep glass instead of ivory */
+  header.nav.scrolled.nav-dark{
+    background:rgba(19,28,46,.9);
+    color:var(--ivory);
+    border-bottom-color:rgba(242,236,222,.16);
+  }
+  header.nav.scrolled.nav-dark .brand-mark{ color:var(--gold-soft); filter:drop-shadow(0 1px 8px rgba(8,11,18,.55)); }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.08em; }
+  /* brand mark: registration frame + bindu; gold over dark scenes, indigo over paper; kept small so the name leads */
+  .brand-mark{ width:28px; height:28px; flex:none; color:var(--gold-soft); filter:drop-shadow(0 1px 8px rgba(8,11,18,.55)); transition:color .5s var(--ease), filter .5s var(--ease); }
+  .brand-mark svg{ display:block; width:100%; height:100%; }
+  .brand-mark svg circle{ transform-box:fill-box; transform-origin:center; }
+  .brand:hover .brand-mark svg circle{ animation:bindu-pulse 1s var(--ease); }
+  @keyframes bindu-pulse{ 0%{transform:scale(1)} 45%{transform:scale(1.4)} 100%{transform:scale(1)} }
+  header.nav.scrolled .brand-mark{ color:var(--indigo); filter:none; }
+  /* keep the wordmark legible over the hero photograph */
+  header.nav:not(.scrolled):not(.panel-open){ text-shadow:0 1px 10px rgba(8,11,18,.55); }
+  .brand-name{ font-family:'Fraunces', serif; font-size:19px; font-weight:500; letter-spacing:0; font-variation-settings:'opsz' 44; }
+  /* scroll progress: a gold thread filling along the nav's bottom edge */
+  .nav-progress{
+    position:absolute; left:0; bottom:-1px; height:2px; width:100%;
+    background:linear-gradient(90deg, var(--gold) 0%, var(--gold-soft) 60%, #E9CF96 100%);
+    transform:scaleX(0); transform-origin:0 50%;
+    transition:opacity .3s var(--ease);
+    pointer-events:none;
+  }
+  header.nav.panel-open .nav-progress{ opacity:0; }
+
+  nav.links{ display:flex; gap:34px; font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; }
+  nav.links a{ opacity:.82; transition:opacity .3s; }
+  nav.links a:hover{ opacity:1; }
+
+  .menu-btn{ display:none; background:none; border:1px dashed currentColor; width:42px; height:42px; border-radius:2px; cursor:pointer; position:relative; }
+  .menu-btn span{ position:absolute; left:12px; right:12px; height:1px; background:currentColor; transition:transform .3s, opacity .3s; }
+  .menu-btn span:nth-child(1){ top:16px; }
+  .menu-btn span:nth-child(2){ top:22px; }
+  .menu-btn span:nth-child(3){ top:28px; }
+  .menu-btn.open span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .menu-btn.open span:nth-child(2){ opacity:0; }
+  .menu-btn.open span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+  .mobile-panel{
+    position:fixed; inset:0; background:var(--ivory); z-index:99;
+    display:flex; flex-direction:column; justify-content:center; padding:48px;
+    transform:translateY(-100%); transition:transform .55s var(--ease);
+  }
+  .mobile-panel.open{ transform:translateY(0); }
+  .mobile-panel a{ font-family:'Fraunces', serif; font-style:italic; font-size:34px; padding:10px 0; border-bottom:1px solid var(--line); }
+  /* when the panel is open the nav must stay readable on top of the ivory panel */
+  header.nav.panel-open, header.nav.panel-open.scrolled, header.nav.panel-open.nav-dark{ color:var(--ink); background:transparent; border-bottom-color:transparent; }
+  header.nav.panel-open.scrolled .brand-mark, header.nav.panel-open.nav-dark .brand-mark{ color:var(--indigo); filter:none; }
+  body.menu-lock{ overflow:hidden; }
+
+  /* ============ HERO ============ */
+  .hero{ position:relative; height:auto; min-height:112vh; min-height:112svh; overflow:hidden; background:var(--indigo-deep); color:var(--ivory); }
+  .hero-photo{ position:absolute; inset:0; overflow:hidden; background:var(--indigo-deep); }
+  .hero-photo img{ width:100%; height:100%; object-fit:contain; object-position:center; display:block; filter:contrast(1.05) brightness(1.02); }
+  .hero-photo::after{
+    content:''; position:absolute; inset:0; z-index:1;
+    background:
+      linear-gradient(to bottom,
+        rgba(8,11,18,.62) 0%,
+        rgba(8,11,18,.38) 38%,
+        rgba(8,11,18,.30) 55%,
+        rgba(19,28,46,.96) 100%),
+      linear-gradient(to right,
+        rgba(8,11,18,.80) 0%,
+        rgba(8,11,18,.36) 52%,
+        rgba(8,11,18,.04) 100%);
+  }
+  .hero-overlay{ position:absolute; inset:0; z-index:2; display:flex; flex-direction:column; justify-content:space-between; align-items:stretch; text-align:left; padding:92px 60px 70px; }
+  .hero-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:24px; }
+  .hero-meta{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:.12em; line-height:1.8; opacity:1; text-transform:uppercase; text-align:right; text-shadow:0 1px 4px rgba(8,11,18,.9); }
+  .hero-bottom{ max-width:760px; margin-top:auto; }
+  .hero-name .display-xl{ color:#E9CF96; font-size:clamp(30px,4.2vw,54px); line-height:1.06; margin:0 0 16px; text-shadow:0 2px 18px rgba(8,11,18,.95); }
+  .hero-name-line{ display:block; }
+  .hero-role{ font-family:'IBM Plex Sans'; font-weight:500; font-size:clamp(15px,1.6vw,17px); color:#F4F7F9; opacity:1; max-width:620px; text-shadow:0 2px 6px rgba(8,11,18,.95), 0 1px 12px rgba(8,11,18,.9); }
+  .hero-role strong{ font-weight:600; color:#E9CF96; }
+  .hero-scroll{ margin-top:30px; display:flex; align-items:center; gap:12px; font-family:'IBM Plex Mono'; font-size:10px; letter-spacing:.14em; text-transform:uppercase; opacity:.95; text-shadow:0 1px 4px rgba(8,11,18,.9); }
+  .hero-scroll .line{ width:36px; height:1px; background:var(--ivory); position:relative; overflow:hidden; }
+  .hero-scroll .line::after{ content:''; position:absolute; inset:0; background:var(--gold-soft); animation:scrollpulse 2.4s ease-in-out infinite; }
+  @keyframes scrollpulse{ 0%{ transform:translateX(-100%);} 50%{ transform:translateX(0);} 100%{ transform:translateX(100%);} }
+
+  /* ============ THESIS ============ */
+  .thesis{ position:relative; z-index:2; padding:18px 48px 135px; text-align:center; }
+  .thesis p{ max-width:820px; margin:0 auto; font-family:'Fraunces', serif; font-style:italic; font-weight:400; font-variation-settings:'opsz' 60; font-size:clamp(18px,2.4vw,27px); line-height:1.5; color:var(--ivory); text-shadow:0 2px 12px rgba(8,11,18,.9); }
+  .thesis .tag--on-dark{ margin-bottom:22px; font-size:11px; border-color:#E9C77B; color:#E9C77B; text-shadow:0 1px 6px rgba(8,11,18,.9); }
+  .thesis .tag--on-dark::before{ background:var(--indigo-deep); border-color:#E9C77B; }
+
+  section{ position:relative; }
+  section[id]{ scroll-margin-top:84px; }
+
+  /* ============ ABOUT ============ */
+  .about{ padding:20px 48px 60px; }
+  .about-grid{ display:grid; grid-template-columns:1fr 1.05fr; gap:80px; align-items:center; }
+  .about-image{ position:relative; }
+  .about-image img{ width:100%; height:auto; box-shadow:var(--shadow-lg); }
+  .about-image .cap{ margin-top:16px; font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
+
+  /* two-image collage: featured artwork beside the exhibition view */
+  .collage{ display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:center; }
+  .collage .c1, .collage .c2{ width:100%; display:flex; flex-direction:column; align-items:center; }
+  .collage .c1 img, .collage .c2 img{ width:100%; height:auto; box-shadow:none; border:1px solid var(--line); }
+  .collage .c-sub{ margin-top:10px; font-family:'IBM Plex Mono'; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
+  .collage .c-sub.on-dark{ color:rgba(242,236,222,.6); }
+  @media (max-width:560px){
+    .collage{ grid-template-columns:1fr; gap:20px; }
+    .collage .c1 img, .collage .c2 img{ max-width:320px; }
+  }
+
+  .about h2{ margin-bottom:26px; }
+  .about p.body-copy{ font-size:16.5px; color:var(--ink-soft); max-width:58ch; margin:0 0 18px; }
+  .about .quote{ font-size:22px; color:var(--ink); margin:32px 0; line-height:1.5; max-width:44ch; }
+  .about .quote::before{ content:'“'; color:var(--gold); }
+  .about .quote::after{ content:'”'; color:var(--gold); }
+  .stat-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
+
+  /* ============ TIMELINE ============ */
+  .timeline{ background:var(--indigo-deep); color:var(--ivory); padding:84px 0; }
+  .tl-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; }
+  .tl-col{ padding:64px 48px; border-left:1px solid var(--line-light); }
+  .tl-col:first-child{ border-left:none; }
+  .tl-yr{ font-family:'IBM Plex Mono'; font-size:12px; color:var(--gold-soft); letter-spacing:.12em; text-transform:uppercase; }
+  .tl-col h3{ color:var(--ivory); margin:18px 0 16px; }
+  .tl-col p{ color:rgba(242,236,222,.72); max-width:40ch; font-size:15.5px; margin:0 0 26px; }
+  .tl-count{ font-family:'Fraunces', serif; font-size:44px; color:var(--gold-soft); font-variation-settings:'opsz' 90; line-height:1; display:block; margin-bottom:8px; }
+
+  /* ============ DIGITAL TEXTILE (current practice) ============ */
+  .dtextile{ background:var(--ivory); padding:84px 48px; }
+  .dt-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start; }
+  .dt-lead h2{ margin-bottom:24px; }
+  .dt-lead p.body-copy{ color:var(--ink-soft); font-size:17px; max-width:52ch; margin-bottom:22px; }
+  .dt-lead .quote{ font-size:23px; color:var(--ink); line-height:1.5; max-width:42ch; }
+  .dt-cap{ display:flex; flex-wrap:wrap; gap:12px; }
+  .dt-list{ list-style:none; padding:0; margin:0; }
+  .dt-list li{ display:flex; gap:16px; padding:20px 0; border-bottom:1px solid var(--line); }
+  .dt-list li .n{ font-family:'Fraunces', serif; font-size:26px; color:var(--gold); font-variation-settings:'opsz' 80; line-height:1; }
+  .dt-list li b{ display:block; font-family:'Fraunces', serif; font-size:19px; font-weight:500; font-variation-settings:'opsz' 40; margin-bottom:4px; }
+  .dt-list li p{ margin:0; color:var(--ink-soft); font-size:15px; max-width:40ch; }
+  .dt-nav{ display:inline-block; margin-top:34px; }
+
+  /* ============ PRESS / RECOGNITION ============ */
+  .press{ background:var(--ivory-2); padding:60px 48px; }
+  .press-row{ display:flex; flex-wrap:wrap; gap:40px; align-items:center; justify-content:center; font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:.08em; color:var(--ink-soft); text-transform:uppercase; }
+  .press-row span{ display:inline-flex; align-items:center; gap:10px; }
+  .press-row .dot{ width:5px; height:5px; border-radius:50%; background:var(--gold); }
+  .press-row a{ color:var(--indigo); font-weight:600; text-decoration:none; border-bottom:1px solid var(--gold); transition:color .3s var(--ease), border-color .3s var(--ease); }
+  .press-row a:hover{ color:var(--ink); border-color:var(--indigo); }
+  .press-note{ margin-top:34px; text-align:center; font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:.06em; color:var(--ink-soft); }
+  .press-media{ display:flex; flex-wrap:wrap; gap:28px; align-items:center; justify-content:center; margin-bottom:40px; }
+  .press-card{ width:210px; background:var(--ivory); border:1px solid var(--line); box-shadow:0 14px 34px -22px rgba(19,28,46,.4); }
+  .press-card img{ display:block; width:100%; height:auto; }
+  .press-card figcaption{ margin-top:14px; font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:.06em; color:var(--ink-soft); text-transform:uppercase; text-align:center; }
+
+  /* ============ SECTION HEADS (shared) ============ */
+  .sec-head{ max-width:680px; margin-bottom:64px; }
+  .sec-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+  .sec-head.center p{ margin-left:auto; margin-right:auto; }
+  .sec-head p{ margin-top:20px; color:var(--ink-soft); font-size:16px; max-width:62ch; }
+  .sec-head.on-dark p{ color:rgba(242,236,222,.72); }
+  .sec-head.on-dark h2{ color:var(--ivory); }
+
+  /* ============ LONDON / FINE ART FEATURE ============ */
+  .london{ padding:84px 48px 40px; }
+  .about-grid>*, .founder-grid>*, .fa-feature>*, .modi-grid>*, .sc-grid>*, .dt-grid>*{ min-width:0; }
+  .fa-feature{ display:grid; grid-template-columns:1.1fr .9fr; gap:80px; align-items:center; margin-bottom:100px; }
+  .artwork-frame{ background:var(--ivory-2); padding:26px; box-shadow:var(--shadow-lg); }
+  .artwork-frame img{ width:100%; height:auto; box-shadow:inset 0 0 0 1px rgba(0,0,0,.08); }
+  .plaque{ margin-top:20px; padding-top:16px; border-top:1px solid var(--line); }
+  .plaque .t1{ font-family:'Fraunces', serif; font-style:italic; font-size:19px; margin-bottom:6px; font-variation-settings:'opsz' 30; }
+  .plaque .t2{ font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:.06em; color:var(--ink-soft); }
+  .fa-side p.body-copy{ color:var(--ink-soft); font-size:16.5px; max-width:48ch; margin-bottom:26px; }
+  .fa-side ul.facts{ list-style:none; padding:0; margin:0 0 30px; }
+  .fa-side ul.facts li{ display:flex; gap:14px; padding:14px 0; border-bottom:1px solid var(--line); font-size:15px; color:var(--ink-soft); }
+  .fa-side ul.facts li b{ font-weight:600; color:var(--ink); min-width:120px; font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding-top:3px; }
+
+  /* ============ LONDON GALLERY ============ */
+  .gallery{ padding:40px 48px 40px; }
+  .gal-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; align-items:start; }
+  .gal-item{ padding:12px 12px 16px; background:var(--ivory); border:1px solid var(--line); box-shadow:0 14px 34px -22px rgba(19,28,46,.4); }
+  .gal-item img{ width:100%; height:auto; display:block; }
+  .gal-item .cap{ margin-top:12px; font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); text-align:center; }
+  .gal-wide{ grid-column:span 2; }
+  .gal-wide .cap{ opacity:1; }
+
+  /* single uncropped solo-show image */
+  .solo-single{ max-width:860px; margin:0 auto; }
+  .solo-single img{ width:100%; height:auto; box-shadow:var(--shadow-lg); }
+  .solo-single .cap{ margin-top:16px; font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
+
+
+  /* ============ SCULPTURE ============ */
+  .sculpture{ background:var(--indigo); color:var(--ivory); padding:90px 48px; }
+  .sc-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:80px; align-items:center; }
+  .sc-image img{ width:100%; height:auto; box-shadow:var(--shadow-lg); }
+  .sc-image .cap{ margin-top:16px; font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:rgba(242,236,222,.6); }
+  .sc-side h2{ color:var(--ivory); margin-bottom:24px; }
+  .sc-side p.body-copy{ color:rgba(242,236,222,.74); font-size:16.5px; max-width:52ch; margin-bottom:28px; }
+  .sc-side .quote{ color:var(--gold-soft); font-size:22px; line-height:1.5; max-width:40ch; }
+
+  /* ============ MODI LETTER ============ */
+  .modi{ padding:84px 48px; }
+  .modi-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:80px; align-items:center; }
+  .modi-image img{ width:100%; height:auto; box-shadow:var(--shadow-lg); }
+  .modi-image .cap{ margin-top:16px; font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
+  .modi-side h2{ margin-bottom:24px; }
+  .modi-side p.body-copy{ color:var(--ink-soft); font-size:16.5px; max-width:52ch; margin-bottom:26px; }
+  .modi-side .quote{ font-size:21px; color:var(--ink); line-height:1.55; max-width:46ch; }
+  .modi-side .quote::before{ content:'“'; color:var(--gold); }
+  .modi-side .quote::after{ content:'”'; color:var(--gold); }
+
+  /* ============ EXHIBITIONS ============ */
+  .exhibitions{ background:var(--indigo-deep); color:var(--ivory); padding:84px 48px; }
+  .ex-note{ font-family:'IBM Plex Mono'; font-size:11.5px; letter-spacing:.03em; color:rgba(242,236,222,.55); margin-top:18px; font-style:italic; }
+  .ex-list{ margin-top:60px; border-top:1px solid var(--line-light); }
+  .ex-row{ display:grid; grid-template-columns:120px 1fr 120px; align-items:center; gap:24px; padding:26px 0; border-bottom:1px solid var(--line-light); }
+  .ex-row .yr{ font-family:'IBM Plex Mono'; font-size:14px; color:var(--gold-soft); letter-spacing:.04em; }
+  .ex-row .ti{ font-family:'Fraunces', serif; font-size:clamp(17px,2vw,22px); font-variation-settings:'opsz' 40; }
+  .ex-row .ti small{ display:block; font-family:'IBM Plex Sans'; font-size:13px; color:rgba(242,236,222,.6); margin-top:4px; font-style:normal; }
+  .ex-row .kind{ justify-self:end; }
+
+  /* ============ FOUNDER ============ */
+  .founder{ padding:84px 48px; }
+  .founder-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:80px; align-items:center; }
+  .founder-image{ position:relative; }
+  .founder-image img{ width:100%; height:auto; box-shadow:var(--shadow-lg); }
+  .founder-image .cap{ margin-top:16px; font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
+  .founder h2{ margin-bottom:24px; }
+  .founder p.body-copy{ color:var(--ink-soft); font-size:16.5px; max-width:52ch; margin-bottom:28px; }
+  .founder-status{ display:flex; gap:12px; flex-wrap:wrap; }
+
+  /* ============ NEWS & ARTICLES ============ */
+  .news{ padding:80px 48px; }
+  .news .sec-head{ max-width:640px; margin-bottom:44px; }
+  .news-list{ display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:760px; }
+  .news-item{ background:var(--ivory); border:1px solid var(--line); padding:24px 26px; transition:transform .3s var(--ease), box-shadow .3s var(--ease); }
+  .news-item:hover{ transform:translateY(-3px); box-shadow:0 18px 38px -26px rgba(19,28,46,.4); }
+  .news-item small{ font-family:'IBM Plex Mono'; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-soft); display:block; margin-bottom:10px; }
+  .news-item a{ font-family:'Fraunces', serif; font-size:18px; color:var(--ink); text-decoration:none; border-bottom:1px solid transparent; transition:color .3s var(--ease), border-color .3s var(--ease); }
+  .news-item a:hover{ color:var(--indigo); border-color:var(--gold); }
+  .news-note{ margin-top:34px; font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:.06em; color:var(--ink-soft); }
+
+
+  /* ============ CONTACT ============ */
+  .contact{ background:var(--indigo-deep); color:var(--ivory); padding:90px 48px; text-align:center; }
+  .contact .sec-head{ margin-left:auto; margin-right:auto; }
+  .contact-email{ display:inline-block; margin-top:44px; font-family:'Fraunces', serif; font-size:clamp(24px,4vw,40px); font-variation-settings:'opsz' 90; border-bottom:1px solid var(--line-light); padding-bottom:14px; transition:opacity .3s; }
+  .contact-email:hover{ opacity:.7; }
+  .contact-phone{ display:block; margin-top:22px; font-family:'IBM Plex Mono'; font-size:16px; letter-spacing:.06em; color:var(--gold-soft); }
+  .contact-links{ margin-top:44px; display:flex; gap:34px; justify-content:center; font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:.1em; text-transform:uppercase; }
+  .contact-links a{ opacity:.75; transition:opacity .3s; }
+  .contact-links a:hover{ opacity:1; }
+
+  /* ============ FOOTER ============ */
+  footer{ background:var(--indigo-deep); color:rgba(242,236,222,.6); padding:38px 48px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line-light); font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.06em; }
+  footer .f-brand{ display:flex; align-items:center; gap:10px; }
+  footer .brand-mark{ width:22px; height:22px; }
+
+  /* ============ THEME SEAMS ============ */
+  /* dark sections fade in and out of the ivory paper instead of hard-cutting */
+  .timeline{ background:linear-gradient(180deg, var(--indigo-deep) 0%, var(--indigo-deep) calc(100% - 120px), var(--ivory-2) 100%); }
+  .press{ background:linear-gradient(180deg, var(--ivory-2) 0%, var(--ivory-2) calc(100% - 90px), var(--ivory) 100%); }
+  .sculpture{ background:linear-gradient(180deg, var(--ivory) 0%, var(--indigo) 130px, var(--indigo) calc(100% - 130px), var(--ivory) 100%); }
+  .exhibitions{ background:linear-gradient(180deg, var(--ivory) 0%, var(--indigo-deep) 130px, var(--indigo-deep) calc(100% - 130px), var(--ivory) 100%); }
+  .contact{ background:linear-gradient(180deg, var(--ivory) 0%, var(--indigo-deep) 130px); }
+
+  /* ============ LIGHTBOX ============ */
+  img[data-full]{ cursor:zoom-in; }
+  .lb{
+    position:fixed; inset:0; z-index:200;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:64px 76px 44px;
+    background:rgba(9,12,20,.94);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    opacity:0; visibility:hidden;
+    transition:opacity .4s var(--ease), visibility 0s linear .4s;
+  }
+  .lb.open{ opacity:1; visibility:visible; transition:opacity .4s var(--ease); }
+  .lb img{
+    max-width:100%; width:auto; height:auto;
+    max-height:calc(100vh - 140px); max-height:calc(100svh - 140px);
+    box-shadow:0 60px 120px -40px rgba(0,0,0,.85);
+    border:1px solid var(--line-light);
+    transform:scale(.965); transition:transform .45s var(--ease);
+  }
+  .lb.open img{ transform:scale(1); }
+  .lb-cap{
+    margin-top:16px; display:flex; align-items:center; gap:18px;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.1em;
+    text-transform:uppercase; color:rgba(242,236,222,.66); text-align:center; max-width:90%;
+  }
+  .lb-count{ color:var(--gold-soft); flex:none; }
+  .lb-btn{
+    position:absolute; z-index:2;
+    width:46px; height:46px; border-radius:2px;
+    background:rgba(9,12,20,.35); border:1px solid var(--line-light); color:var(--ivory);
+    font-family:'IBM Plex Mono', monospace; font-size:17px; line-height:1;
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    transition:border-color .3s var(--ease), color .3s var(--ease), background .3s var(--ease);
+  }
+  .lb-btn:hover{ border-color:var(--gold-soft); color:var(--gold-soft); background:rgba(9,12,20,.7); }
+  .lb-close{ top:22px; right:22px; }
+  .lb-prev{ left:22px; top:50%; transform:translateY(-50%); }
+  .lb-next{ right:22px; top:50%; transform:translateY(-50%); }
+  body.lb-lock{ overflow:hidden; }
+
+  /* ============ RESPONSIVE ============ */
+  /* the 9-link desktop nav needs ~1250px; below that switch to the hamburger */
+  @media (max-width:1250px){
+    nav.links{ display:none; }
+    .menu-btn{ display:block; }
+  }
+  @media (max-width:1080px){
+    .wrap{ padding:0 32px; }
+    .about-grid, .founder-grid, .fa-feature, .modi-grid, .sc-grid, .dt-grid{ grid-template-columns:1fr; gap:48px; }
+    .tl-grid{ grid-template-columns:1fr; }
+    .tl-col{ border-left:none; border-top:1px solid var(--line-light); }
+    .tl-col:first-child{ border-top:none; }
+    .gal-grid{ grid-template-columns:repeat(2,1fr); }
+    .gal-wide{ grid-column:span 2; }
+    header.nav{ padding:22px 32px; }
+    .hero-overlay{ padding:48px 40px 52px; }
+    .thesis, .about, .london, .gallery, .modi, .exhibitions, .founder, .contact, .sculpture, .press, .dtextile{ padding-left:32px; padding-right:32px; }
+  }
+  @media (max-width:760px){
+    .hero{ height:auto; min-height:100vh; min-height:100svh; }
+    .hero-overlay{ padding:110px 26px 46px; }
+    .hero-top{ flex-direction:column; align-items:flex-start; gap:16px; }
+    .hero-meta{ text-align:left; }
+    .hero-bottom{ max-width:100%; }
+    .hero-name .display-xl{ font-size:clamp(30px,9vw,42px); }
+    .sec-head{ margin-bottom:44px; }
+    .thesis{ padding-top:44px; padding-bottom:60px; padding-left:26px; padding-right:26px; }
+    .about{ padding-bottom:100px; }
+    .tl-col{ padding:48px 32px; }
+    .fa-feature{ margin-bottom:70px; }
+    .ex-row{ grid-template-columns:76px 1fr; gap:16px; }
+    .ex-row .kind{ display:none; }
+    .gallery, .modi, .founder, .exhibitions, .contact, .sculpture, .london, .dtextile{ padding-top:90px; padding-bottom:90px; }
+    .gal-grid{ grid-template-columns:1fr 1fr; }
+    .news-list{ grid-template-columns:1fr; }
+    footer{ flex-direction:column; gap:14px; text-align:center; }
+    .press-row{ gap:20px; flex-direction:column; }
+  }
+
+  /* small phones */
+  @media (max-width:560px){
+    .tag{ white-space:normal; }
+    .wrap{ padding:0 20px; }
+    header.nav{ padding:16px 20px; }
+    header.nav.scrolled{ padding:14px 20px; }
+    .brand-mark{ width:24px; height:24px; }
+    .brand-name{ font-size:17px; }
+    .hero-overlay{ padding:96px 20px 40px; }
+    .thesis{ padding-left:0; padding-right:0; }
+    .thesis, .about, .london, .gallery, .modi, .exhibitions, .founder, .contact, .sculpture, .press, .dtextile{ padding-left:20px; padding-right:20px; }
+    .tl-col{ padding:40px 20px; }
+    .gal-grid{ gap:12px; }
+    .gal-item{ padding:8px 8px 12px; }
+    .ex-row{ padding:20px 0; }
+    .artwork-frame{ padding:14px; }
+    .collage{ gap:12px; }
+    .mobile-panel{ padding:28px 24px; }
+    .mobile-panel a{ font-size:27px; padding:8px 0; }
+    .contact-links{ gap:24px; }
+    footer{ padding:30px 20px; }
+    .lb{ padding:58px 14px 36px; }
+    .lb img{ max-height:calc(100svh - 124px); }
+    .lb-btn{ width:42px; height:42px; }
+    .lb-close{ top:14px; right:14px; }
+    .lb-prev{ left:10px; }
+    .lb-next{ right:10px; }
+    .lb-cap{ font-size:10px; gap:12px; }
+  }
+
+  /* ============ PRINT / PDF ============ */
+  @media print{
+    @page{ size:A4; margin:14mm; }
+    html, body{ background:#ffffff !important; }
+    header.nav, .menu-btn, .hero .hero-scroll, .hero-overlay .hero-top{ display:none !important; }
+    .reveal, .reveal.is-visible, .reveal-delay-1.is-visible, .reveal-delay-2.is-visible, .reveal-delay-3.is-visible{
+      opacity:1 !important; transform:none !important; transition:none !important;
+    }
+    .hero{ height:auto !important; min-height:0 !important; }
+    .hero-photo{ position:relative !important; inset:auto !important; }
+    .hero-photo img{ max-height:30vh !important; object-fit:contain; object-position:center !important; }
+    img{ page-break-inside:avoid; }
+    .lb{ display:none !important; }
+    .timeline, .sculpture, .exhibitions, .contact, footer{ background:var(--indigo-deep) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    section, .press, footer{ page-break-inside:avoid; }
+    a{ color:var(--ink) !important; }
+    .press-row a, .news-item a{ color:var(--indigo) !important; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="siteNav">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 34 34" fill="none"><rect x="1.3" y="1.3" width="31.4" height="31.4" rx="2.6" stroke="currentColor" stroke-width="1.7"/><path d="M6.6 11V6.6H11M23 6.6h4.4V11M27.4 23v4.4H23M11 27.4H6.6V23" stroke="currentColor" stroke-width="1.7"/><circle cx="17" cy="17" r="4.7" fill="#C9A567"/></svg></span>
+      <span class="brand-name">Rajnikant C. Chauhan</span>
+    </a>
+    <nav class="links">
+      <a href="#about">Profile</a>
+      <a href="#journey">Journey</a>
+      <a href="#textile">Digital Textile</a>
+      <a href="#london">London Shows</a>
+      <a href="#sculpture">Sculpture</a>
+      <a href="#recognition">Recognition</a>
+      <a href="#exhibitions">Exhibitions</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobilePanel"><span></span><span></span><span></span></button>
+    <span class="nav-progress" aria-hidden="true"></span>
+  </header>
+
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#about">Profile</a>
+    <a href="#journey">Journey</a>
+    <a href="#textile">Digital Textile</a>
+    <a href="#london">London Shows</a>
+    <a href="#sculpture">Sculpture</a>
+    <a href="#recognition">Recognition</a>
+    <a href="#exhibitions">Exhibitions</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top" data-theme="dark">
+    <div class="hero-photo"><img src="assets/hero.jpg" alt="Painting by Rajnikant C. Chauhan" width="1600" height="1286" fetchpriority="high" decoding="async"></div>
+    <div class="hero-overlay">
+      <div class="hero-top">
+        <span class="tag tag--on-dark">Surat · Gujarat, India</span>
+        <div class="hero-meta">15 Years · Free-Hand Sketch Artist, Textile<br>10 Years · Fine Arts<br>10 Years · Digital Textile Design</div>
+      </div>
+      <div class="hero-bottom">
+        <h1 class="display-xl hero-name"><span class="hero-name-line">Rajnikant C. Chauhan</span></h1>
+        <p class="hero-role"><strong>Digital Textile Designer.</strong> Fifteen years as a free-hand sketch artist in the textile industry of Surat, then ten years in paintings and sculpture, and a decade more in digital textile design: an artist's eye now driving surface pattern and print for the fashion industry.</p>
+        <div class="hero-scroll"><span class="line"></span> Scroll</div>
+      </div>
+      <div class="thesis reveal">
+        <span class="tag tag--on-dark">Two Crafts, One Hand</span>
+        <p>Every surface begins the same way: with a line, a decision about colour, an instinct for pattern. What changes is only where it lands: on cloth, on canvas, or carved in wood.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE / JOURNEY ============ -->
+  <section class="timeline" id="journey" data-theme="dark">
+    <div class="wrap">
+      <div class="sec-head on-dark reveal">
+        <div class="eyebrow-row"><span class="rule-short on-dark"></span><span class="tag tag--on-dark">The Journey</span></div>
+        <h2 class="display-lg">Three Chapters,<br>One Discipline</h2>
+        <p>A career built on the conviction that a trained hand belongs to every material it touches: cotton, canvas and carved wood.</p>
+      </div>
+      <div class="tl-grid">
+        <div class="tl-col reveal">
+          <span class="tl-yr">Chapter I · Textile Craft</span>
+          <span class="tl-count">15 Yrs</span>
+          <h3 class="display-md">Free-Hand Sketch Artist</h3>
+          <p>Fifteen years as a free-hand sketch artist in the fashion and textile industries of Surat, drawing and designing the motifs that grow into printed cloth.</p>
+        </div>
+        <div class="tl-col reveal reveal-delay-1">
+          <span class="tl-yr">Chapter II · Fine Art</span>
+          <span class="tl-count">10 Yrs</span>
+          <h3 class="display-md">Fine Arts: Painting &amp; Sculpture</h3>
+          <p>Ten one-man shows and more than twenty-five group exhibitions. Oil, foil and mixed media on canvas; figures and form carved in wood.</p>
+        </div>
+        <div class="tl-col reveal reveal-delay-2">
+          <span class="tl-yr">Chapter III · Digital Textile</span>
+          <span class="tl-count">10 Yrs</span>
+          <h3 class="display-md">Digital Textile Designer</h3>
+          <p>Carrying the painter's sense of surface into the fashion industry, converting artistic knowledge into repeat, colourway and digital print.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRESS STRIP ============ -->
+  <div class="press">
+    <div class="press-row reveal">
+      <span><span class="dot"></span>MP Birla Art Gallery, London</span>
+      <span><span class="dot"></span>Lalit Kala Academy</span>
+      <span><span class="dot"></span>Founder · Square Art Group</span>
+      <span><span class="dot"></span><a href="https://timesofindia.indiatimes.com/city/surat/city-painter-sculptor-makes-it-to-londons-art-gallery/articleshow/5315796.cms" target="_blank" rel="noopener">The Times of India, 2009</a></span>
+      <span><span class="dot"></span><a href="https://timesofindia.indiatimes.com/city/surat/south-gujarat-artists-to-hold-exhibition-in-ahmedabad/articleshow/5414328.cms" target="_blank" rel="noopener">The Times of India, 2010</a></span>
+    </div>
+    <div class="press-note reveal reveal-delay-1">Featured in hundreds of newspaper and press articles across India.</div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about wrap" id="about">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="assets/about.jpg" alt="Rajnikant C. Chauhan" data-full="assets/full/about.jpg" width="1400" height="1050" loading="lazy" decoding="async">
+        <div class="cap">The Artist</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="eyebrow-row"><span class="rule-short"></span><span class="tag">Profile</span></div>
+        <h2 class="display-lg">A hand trained in cloth,<br>and in colour.</h2>
+        <p class="body-copy" style="margin-top:28px;">Born in Kosamba, Surat district, to a drawing teacher, Rajnikant C. Chauhan is a <strong>multi-disciplinary artist</strong>. He spent fifteen years as a free-hand sketch artist in the fashion and textile industries of Surat before leaving an eleven-year post in 2001 to give himself wholly to painting and sculpture. That leap carried him to solo exhibitions across India and to the M. P. Birla Art Gallery in London (2008 &amp; 2009), where twenty-two canvases and ten carved-wood sculptures were shown.</p>
+        <p class="body-copy">He is also the founder of Square Art Group, a collective of South Gujarat artists. Today, the same artistic knowledge anchors a <strong>Digital Textile Design</strong> practice for the fashion industry.</p>
+        <p class="quote">Cloth and canvas are not two disciplines. They are one language, spoken in two rooms.</p>
+        <div class="stat-row">
+          <span class="tag tag--on-card">15 Yrs · Textile</span>
+          <span class="tag tag--on-card">10 One-Man Shows</span>
+          <span class="tag tag--on-card">25+ Group Shows</span>
+          <span class="tag tag--on-card">Exhibited · London</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIGITAL TEXTILE (CURRENT PRACTICE) ============ -->
+  <section class="dtextile wrap" id="textile">
+    <div class="dt-grid">
+      <div class="dt-lead reveal">
+        <div class="eyebrow-row"><span class="rule-short"></span><span class="tag">Current Practice · Digital Textile Design</span></div>
+        <h2 class="display-lg">Where the studio<br>meets the factory.</h2>
+        <p class="body-copy" style="margin-top:26px;">Today, this profile is anchored firmly in the fashion and textile industry. Drawing on more than a decade of hand-drawn pattern work and a fine-artist's eye for colour, Rajnikant works as a <strong>Digital Textile Designer</strong>, translating instinct into repeat, colourway and print-ready artwork for the digital press and the mill floor alike.</p>
+        <p class="body-copy">The fine-art past is not left behind; it is the foundation. Every motif carries the same discipline he once carried into a gallery, only now it lands on fabric worn every day.</p>
+        <p class="quote">The gallery trained my eye. The industry gives that eye a purpose.</p>
+        <div class="dt-cap">
+          <span class="tag tag--on-card">Digital Print</span>
+          <span class="tag tag--on-card">Repeat &amp; Colourway</span>
+          <span class="tag tag--on-card">Fashion Textiles</span>
+        </div>
+      </div>
+      <ul class="dt-list reveal reveal-delay-1">
+        <li><span class="n">01</span><div><b>Repeat Construction</b><p>Designing seamless, engineered repeats that scale cleanly from a hand sketch to metres of printed cloth.</p></div></li>
+        <li><span class="n">02</span><div><b>Colour &amp; Colourway</b><p>Developing colour palettes and multiple colourways with an artist's sensitivity to tone and balance.</p></div></li>
+        <li><span class="n">03</span><div><b>Print-Ready Artwork</b><p>Preparing files for the digital press and mill floor with accuracy and efficiency.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ LONDON FEATURE ============ -->
+  <section class="london wrap" id="london">
+    <div class="fa-feature">
+      <div class="artwork-frame reveal">
+        <div class="collage">
+          <div class="c1"><img src="assets/solo-artwork-1.jpg" alt="Featured painting by Rajnikant C. Chauhan" data-full="assets/solo-artwork-1.jpg" width="1200" height="1800" loading="lazy" decoding="async"><div class="c-sub">Featured Artwork</div></div>
+          <div class="c2"><img src="assets/solo-artwork-2.jpg" alt="Wood sculptures and paintings on view at the exhibition" data-full="assets/solo-artwork-2.jpg" width="1600" height="1126" loading="lazy" decoding="async"></div>
+        </div>
+        <div class="plaque">
+          <div class="t1">M. P. Birla Art Gallery</div>
+          <div class="t2">London · 2008 &amp; 2009</div>
+        </div>
+      </div>
+      <div class="fa-side reveal reveal-delay-1">
+        <div class="eyebrow-row"><span class="rule-short"></span><span class="tag">Solo Exhibitions · M. P. Birla, London</span></div>
+        <h2 class="display-lg">Made It to<br>London's Art Gallery</h2>
+        <p class="body-copy" style="margin-top:26px;">In two solo shows at the M. P. Birla Art Gallery in London (2008 and 2009), twenty-two canvas paintings and ten wooden sculptures were exhibited. Sponsored by the Lalit Kala Academy, the shows drew collectors and guests.</p>
+        <ul class="facts">
+          <li><b>Venue</b>M. P. Birla Art Gallery, London</li>
+          <li><b>Years</b>2008 &amp; 2009 · two solo shows</li>
+          <li><b>Works</b>22 paintings · 10 wooden sculptures</li>
+          <li><b>Supported by</b>Lalit Kala Academy</li>
+        </ul>
+        <a href="#gallery" class="btn-line" style="color:var(--indigo);">View Exhibition Gallery ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="gallery wrap" id="gallery">
+    <div class="sec-head reveal">
+      <div class="eyebrow-row"><span class="rule-short"></span><span class="tag">London Shows · Photo Archive</span></div>
+      <h2 class="display-lg">London Shows<br>in Photographs</h2>
+      <p>An archive of the two solo exhibitions at the M. P. Birla Art Gallery in London (2008–09): the paintings, the sculpture and the visitors who came to see them.</p>
+    </div>
+    <div class="gal-grid reveal reveal-delay-1">
+      <div class="gal-item gal-wide"><img src="assets/london-exhibition-1.jpg" alt="Exhibition view" data-full="assets/full/london-exhibition-1.jpg" width="1400" height="1050" loading="lazy" decoding="async"></div>
+      <div class="gal-item"><img src="assets/london-exhibition-2.jpg" alt="Paintings on the wall" data-full="assets/full/london-exhibition-2.jpg" width="1400" height="931" loading="lazy" decoding="async"></div>
+      <div class="gal-item"><img src="assets/london-exhibition-3.jpg" alt="Sculpture in the gallery" data-full="assets/full/london-exhibition-3.jpg" width="987" height="1400" loading="lazy" decoding="async"></div>
+      <div class="gal-item"><img src="assets/london-exhibition-4.jpg" alt="Guests at the show" data-full="assets/full/london-exhibition-4.jpg" width="976" height="1400" loading="lazy" decoding="async"></div>
+      <div class="gal-item"><img src="assets/guest-1.jpg" alt="Painting on view at the exhibition" data-full="assets/guest-1.jpg" width="720" height="534" loading="lazy" decoding="async"></div>
+    </div>
+  </section>
+
+  <!-- ============ SCULPTURE ============ -->
+  <section class="sculpture" id="sculpture" data-theme="dark">
+    <div class="wrap sc-grid">
+      <div class="sc-image reveal">
+        <img src="assets/sculpture-1.jpg" alt="Carved wood sculpture at the exhibition" data-full="assets/full/sculpture-1.jpg" width="1400" height="1050" loading="lazy" decoding="async">
+        <div class="cap">Sculpture · Nehru Art Gallery</div>
+      </div>
+      <div class="sc-side reveal reveal-delay-1">
+        <div class="eyebrow-row"><span class="rule-short on-dark"></span><span class="tag tag--on-dark">Sculpture</span></div>
+        <h2 class="display-lg">Form Carved<br>in Wood</h2>
+        <p class="body-copy" style="margin-top:26px;">Alongside the canvas, a parallel body of work in wood: ten sculptures travelled to London in 2009, and carving has remained part of the daily studio practice. Figurative and geometric, they share the same discipline as the paintings: a line eventually trusted enough to stand in three dimensions.</p>
+        <p class="quote">A line asked to remain, drawn in the grain instead of paint.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RAZA, PARIS ============ -->
+  <section class="modi wrap">
+    <div class="modi-grid">
+      <div class="modi-image reveal">
+        <img src="assets/raza.jpg" alt="Rajnikant C. Chauhan presenting a painting to S. H. Raza in Paris" data-full="assets/raza.jpg" width="864" height="648" loading="lazy" decoding="async">
+        <div class="cap">With Shri S. H. Raza in Paris</div>
+      </div>
+      <div class="modi-side reveal reveal-delay-1">
+        <div class="eyebrow-row"><span class="rule-short"></span><span class="tag">A Meeting in Paris</span></div>
+        <h2 class="display-lg">In the Company<br>of Raza</h2>
+        <p class="body-copy" style="margin-top:26px;">At his residence in Paris, he met Syed Haider Raza, one of India's most celebrated modern painters, and presented his paintings to the master. It remains a defining moment in a life devoted to art.</p>
+        <p class="quote">A gift of canvas offered to a legend, between two artists who never needed to explain.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODI LETTER ============ -->
+  <section class="modi wrap" id="recognition">
+    <div class="modi-grid">
+      <div class="modi-image reveal">
+        <img src="assets/modi-letter.jpg" alt="Letter of appreciation from Narendra Modi" data-full="assets/modi-letter.jpg" width="995" height="1280" loading="lazy" decoding="async">
+        <div class="cap">Letter of Appreciation from Narendra Modi</div>
+      </div>
+      <div class="modi-side reveal reveal-delay-1">
+        <div class="eyebrow-row"><span class="rule-short"></span><span class="tag">Recognition</span></div>
+        <h2 class="display-lg">A Letter That<br>Mattered</h2>
+        <p class="body-copy" style="margin-top:26px;">A gesture of recognition that carries weight: Narendra Modi, then Chief Minister of Gujarat and now Prime Minister of India, acknowledged the work in writing. The letter speaks to the persistence behind a practice that moves between canvas, cloth and carved wood.</p>
+        <p class="quote">To be seen by a leader is to know the hours at the easel were worth every one of them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOLO SHOWS GALLERY ============ -->
+  <section class="gallery wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow-row"><span class="rule-short"></span><span class="tag">Solo Shows · India</span></div>
+      <h2 class="display-lg">Rooms of One's Own</h2>
+      <p>Views from one-man shows across India, at the Nehru Centre and beyond, where a decade of canvas and wood found its audiences.</p>
+    </div>
+    <div class="solo-single reveal reveal-delay-1">
+      <img src="assets/solo-1.jpg" alt="Solo exhibition view with paintings and sculpture" data-full="assets/full/solo-1.jpg" width="1400" height="1050" loading="lazy" decoding="async">
+      <div class="cap">Solo Exhibition View</div>
+    </div>
+  </section>
+
+  <!-- ============ EXHIBITIONS ============ -->
+  <section class="exhibitions" id="exhibitions" data-theme="dark">
+    <div class="wrap">
+      <div class="sec-head on-dark reveal">
+        <div class="eyebrow-row"><span class="rule-short on-dark"></span><span class="tag tag--on-dark">Selected Exhibitions</span></div>
+        <h2 class="display-lg">Recognition &amp; Shows</h2>
+        <p>Ten one-man shows between 2001 and 2009, and more than twenty-five group exhibitions, from Surat to Mumbai, Baroda to Ahmedabad and across the sea to London.</p>
+      </div>
+      <div class="ex-list reveal reveal-delay-1">
+        <div class="ex-row">
+          <div class="yr">2001</div>
+          <div class="ti">Solo Exhibition<small>Rotary Art Gallery, Surat</small></div>
+          <div class="kind tag tag--on-dark">Solo</div>
+        </div>
+        <div class="ex-row">
+          <div class="yr">2001</div>
+          <div class="ti">Solo Exhibition<small>Rotary Art Gallery, Surat</small></div>
+          <div class="kind tag tag--on-dark">Solo</div>
+        </div>
+        <div class="ex-row">
+          <div class="yr">2002</div>
+          <div class="ti">Solo Exhibition<small>Rotary Art Gallery, Surat</small></div>
+          <div class="kind tag tag--on-dark">Solo</div>
+        </div>
+        <div class="ex-row">
+          <div class="yr">2006</div>
+          <div class="ti">Solo Exhibition<small>Museum Art Gallery, Mumbai</small></div>
+          <div class="kind tag tag--on-dark">Solo</div>
+        </div>
+        <div class="ex-row">
+          <div class="yr">2007</div>
+          <div class="ti">Solo Exhibition<small>Z. B. L. Gallery, Mumbai</small></div>
+          <div class="kind tag tag--on-dark">Solo</div>
+        </div>
+        <div class="ex-row">
+          <div class="yr">2008</div>
+          <div class="ti">Solo Exhibition<small>Akruti Art Gallery, Baroda</small></div>
+          <div class="kind tag tag--on-dark">Solo</div>
+        </div>
+        <div class="ex-row">
+          <div class="yr">2008</div>
+          <div class="ti">Solo Exhibition<small>M. P. Birla Art Gallery, London, U.K.</small></div>
+          <div class="kind tag tag--on-dark">Solo</div>
+        </div>
+        <div class="ex-row">
+          <div class="yr">2009</div>
+          <div class="ti">Solo Exhibition<small>Square Art Gallery, Surat</small></div>
+          <div class="kind tag tag--on-dark">Solo</div>
+        </div>
+        <div class="ex-row">
+          <div class="yr">2009</div>
+          <div class="ti">Solo Exhibition<small>M. P. Birla Art Gallery, London, U.K.</small></div>
+          <div class="kind tag tag--on-dark">Solo</div>
+        </div>
+        <div class="ex-row">
+          <div class="yr">2009</div>
+          <div class="ti">Solo Exhibition<small>R. R. Kala Bhavan, Ahmedabad</small></div>
+          <div class="kind tag tag--on-dark">Solo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER ============ -->
+  <section class="founder wrap">
+    <div class="founder-grid">
+      <div class="founder-image reveal">
+        <img src="assets/square-art.jpg" alt="Square Art Group members at the opening" data-full="assets/full/square-art.jpg" width="1400" height="1050" loading="lazy" decoding="async">
+        <div class="cap">Square Art Group Opening View</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="eyebrow-row"><span class="rule-short"></span><span class="tag">Founder</span></div>
+        <h2 class="display-lg">Square Art Group</h2>
+        <p class="body-copy" style="margin-top:26px;">Rajnikant is the founder of Square Art Group, a collective of South Gujarat artists. In January 2010, a group of thirty-six artists exhibited at Anayas Art Gallery, Ahmedabad under the group's aegis, a series of original modern paintings, landscapes, foil-emboss work and sculptures, opened without a single rupee of sponsorship or donation. The group brought promising young artists and first-year fine-arts students onto the same floor as seasoned hands, and honoured senior artists with its Kaladhar Award, a commitment to craft over commerce that still defines the philosophy.</p>
+        <div class="founder-status">
+          <span class="tag">Founded 2010</span>
+          <span class="tag">36 Artists · South Gujarat</span>
+          <span class="tag">Kaladhar Award</span>
+          <span class="tag">Current Status · Inactive</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWS & ARTICLES ============ -->
+  <section class="news wrap" id="news">
+    <div class="sec-head reveal">
+      <div class="eyebrow-row"><span class="rule-short"></span><span class="tag">Press &amp; Media</span></div>
+      <h2 class="display-lg">Media Coverage</h2>
+    </div>
+    <div class="news-list reveal reveal-delay-1">
+      <div class="news-item">
+        <small>The Times of India · 2009</small>
+        <a href="https://timesofindia.indiatimes.com/city/surat/city-painter-sculptor-makes-it-to-londons-art-gallery/articleshow/5315796.cms" target="_blank" rel="noopener">City painter-sculptor makes it to London's art gallery</a>
+      </div>
+      <div class="news-item">
+        <small>The Times of India · 2010</small>
+        <a href="https://timesofindia.indiatimes.com/city/surat/south-gujarat-artists-to-hold-exhibition-in-ahmedabad/articleshow/5414328.cms" target="_blank" rel="noopener">South Gujarat artists to hold exhibition in Ahmedabad</a>
+      </div>
+    </div>
+    <div class="news-note reveal reveal-delay-2">Featured in hundreds of newspaper and press articles across India.</div>
+    <div class="press-media reveal reveal-delay-2">
+      <figure class="press-card"><img src="assets/press-1.jpg" alt="Newspaper press coverage of Rajnikant C. Chauhan" data-full="assets/press-1.jpg" width="616" height="800" loading="lazy" decoding="async"></figure>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact" data-theme="dark">
+    <div class="sec-head on-dark center reveal">
+      <div class="eyebrow-row" style="justify-content:center;"><span class="tag tag--on-dark">Enquiries</span></div>
+      <h2 class="display-lg">Let's Begin a<br>Conversation</h2>
+      <p>Open to work: collaborations, projects and new conversations.</p>
+    </div>
+    <a href="mailto:cjashesh@gmail.com" class="contact-email reveal reveal-delay-1">cjashesh@gmail.com</a>
+    <span class="contact-phone reveal reveal-delay-1">+91 98799 33728</span>
+    <div class="contact-links reveal reveal-delay-2">
+      <a href="mailto:cjashesh@gmail.com">Email</a>
+      <a href="tel:+919879933728">Call</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer data-theme="dark">
+    <div class="f-brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 34 34" fill="none"><rect x="1.3" y="1.3" width="31.4" height="31.4" rx="2.6" stroke="currentColor" stroke-width="1.7"/><path d="M6.6 11V6.6H11M23 6.6h4.4V11M27.4 23v4.4H23M11 27.4H6.6V23" stroke="currentColor" stroke-width="1.7"/><circle cx="17" cy="17" r="4.7" fill="#C9A567"/></svg></span> Rajnikant C. Chauhan © 2026</div>
+    <div class="preview-note">Digital Textile Designer · Fine Artist &amp; Sculptor · Surat, India</div>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged artwork view" aria-hidden="true">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Close enlarged view">&#10005;</button>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">&#8592;</button>
+    <img id="lbImg" src="" alt="">
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">&#8594;</button>
+    <div class="lb-cap"><span id="lbCaption"></span><span class="lb-count" id="lbCount"></span></div>
+  </div>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  const navProgress = document.querySelector('.nav-progress');
+  const onScroll = () => {
+    if (window.scrollY > window.innerHeight * 0.72) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+    if (navProgress){
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      navProgress.style.transform = 'scaleX(' + (max > 0 ? Math.min(window.scrollY / max, 1) : 0) + ')';
+    }
+  };
+  document.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  /* nav glass + browser-UI tint follow the theme of the section under the nav */
+  const darkSections = document.querySelectorAll('[data-theme="dark"]');
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  const themeSpy = () => {
+    let dark = false;
+    for (const s of darkSections){
+      const r = s.getBoundingClientRect();
+      if (r.top <= 40 && r.bottom > 40){ dark = true; break; }
+    }
+    nav.classList.toggle('nav-dark', dark);
+    if (metaTheme) metaTheme.setAttribute('content', dark ? '#131C2E' : '#F2ECDE');
+  };
+  document.addEventListener('scroll', themeSpy, { passive:true });
+  themeSpy();
+
+  const menuBtn = document.getElementById('menuBtn');
+  const panel = document.getElementById('mobilePanel');
+  const setMenu = (open) => {
+    menuBtn.classList.toggle('open', open);
+    panel.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    nav.classList.toggle('panel-open', open);
+    document.body.classList.toggle('menu-lock', open);
+  };
+  menuBtn.addEventListener('click', () => setMenu(!panel.classList.contains('open')));
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold:0.14, rootMargin:'0px 0px -60px 0px' });
+  revealEls.forEach(el => io.observe(el));
+
+  /* ---- lightbox: click any artwork image to view it enlarged ---- */
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbCount = document.getElementById('lbCount');
+  const zoomables = [...document.querySelectorAll('img[data-full]')];
+  let lbIndex = 0, lbToken = 0, lbLastFocus = null;
+
+  const pad2 = (n) => String(n).padStart(2, '0');
+
+  const lbShow = (i) => {
+    lbIndex = (i + zoomables.length) % zoomables.length;
+    const el = zoomables[lbIndex];
+    const full = el.dataset.full;
+    const capEl = el.parentElement.querySelector('.cap, .c-sub');
+    lbCaption.textContent = el.alt + (capEl && capEl.textContent.trim() !== el.alt ? ' · ' + capEl.textContent.trim() : '');
+    lbCount.textContent = pad2(lbIndex + 1) + ' / ' + pad2(zoomables.length);
+    lbImg.alt = el.alt;
+    lbImg.src = el.currentSrc || el.src;   /* show the cached page image instantly… */
+    const token = ++lbToken;
+    const pre = new Image();
+    pre.onload = () => { if (token === lbToken) lbImg.src = full; };  /* …then swap in the full-size file */
+    pre.src = full;
+    const n = zoomables[(lbIndex + 1) % zoomables.length], p = zoomables[(lbIndex - 1 + zoomables.length) % zoomables.length];
+    new Image().src = n.dataset.full;      /* pre-warm the neighbours */
+    new Image().src = p.dataset.full;
+  };
+
+  const lbOpen = (i) => {
+    lbLastFocus = document.activeElement;
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lb-lock');
+    lbShow(i);
+    document.getElementById('lbClose').focus();
+  };
+
+  const lbHide = () => {
+    lbToken++;
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lb-lock');
+    if (lbLastFocus && lbLastFocus.focus) lbLastFocus.focus();
+  };
+
+  zoomables.forEach((el, i) => {
+    el.title = 'Click to enlarge';
+    el.addEventListener('click', () => lbOpen(i));
+  });
+  document.getElementById('lbClose').addEventListener('click', lbHide);
+  document.getElementById('lbPrev').addEventListener('click', () => lbShow(lbIndex - 1));
+  document.getElementById('lbNext').addEventListener('click', () => lbShow(lbIndex + 1));
+  lb.addEventListener('click', (e) => { if (e.target === lb) lbHide(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') lbHide();
+    else if (e.key === 'ArrowLeft') lbShow(lbIndex - 1);
+    else if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
+  });
+
+  let lbTouchX = null;
+  lb.addEventListener('touchstart', (e) => { lbTouchX = e.changedTouches[0].clientX; }, { passive:true });
+  lb.addEventListener('touchend', (e) => {
+    if (lbTouchX === null) return;
+    const dx = e.changedTouches[0].clientX - lbTouchX;
+    if (Math.abs(dx) > 42) lbShow(lbIndex + (dx < 0 ? 1 : -1));
+    lbTouchX = null;
+  }, { passive:true });
+</script>
+</body>
+</html>
