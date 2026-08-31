@@ -931,7 +931,7 @@
   const lbCaption = document.getElementById('lbCaption');
   const lbCount = document.getElementById('lbCount');
   const zoomables = [...document.querySelectorAll('img[data-full]')];
-  let lbIndex = 0, lbToken = 0, lbLastFocus = null;
+  let lbIndex = 0, lbLastFocus = null;
 
   const pad2 = (n) => String(n).padStart(2, '0');
 
@@ -943,13 +943,9 @@
     lbCaption.textContent = el.alt + (capEl && capEl.textContent.trim() !== el.alt ? ' · ' + capEl.textContent.trim() : '');
     lbCount.textContent = pad2(lbIndex + 1) + ' / ' + pad2(zoomables.length);
     lbImg.alt = el.alt;
-    lbImg.src = el.currentSrc || el.src;   /* show the cached page image instantly… */
-    const token = ++lbToken;
-    const pre = new Image();
-    pre.onload = () => { if (token === lbToken) lbImg.src = full; };  /* …then swap in the full-size file */
-    pre.src = full;
+    lbImg.src = full;   /* always show exactly the clicked image */
     const n = zoomables[(lbIndex + 1) % zoomables.length], p = zoomables[(lbIndex - 1 + zoomables.length) % zoomables.length];
-    new Image().src = n.dataset.full;      /* pre-warm the neighbours */
+    new Image().src = n.dataset.full;      /* pre-warm the neighbours only */
     new Image().src = p.dataset.full;
   };
 
@@ -963,7 +959,6 @@
   };
 
   const lbHide = () => {
-    lbToken++;
     lb.classList.remove('open');
     lb.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('lb-lock');
